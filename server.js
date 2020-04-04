@@ -37,9 +37,9 @@ app.post("/", async (req, res) => {
   console.log(quantity);
 });
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('./'));
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static('./'));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/index.html"));
-})}
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "/index.html"));
+// })}
