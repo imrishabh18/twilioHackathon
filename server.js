@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static("./"));
 
-require("dotenv").config();
-const client = require("twilio")(accountSid, authTOken);
+// require("dotenv").config();
+// const client = require("twilio")(accountSid, authTOken);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
@@ -41,5 +41,5 @@ if(process.env.NODE_ENV === 'production'){
   app.use(express.static('./'));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "/index.html"));
 })}
