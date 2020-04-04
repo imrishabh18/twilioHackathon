@@ -37,9 +37,9 @@ app.post("/", async (req, res) => {
   console.log(quantity);
 });
 
-if(process.env.NODE_ENV !== 'production'){
+if(process.env.NODE_ENV === 'production'){
 
-  require("dotenv").config();
+  // require("dotenv").config();
 //   const client = require("twilio")(accountSid, authTOken);
   app.use(express.static('./'));
 
