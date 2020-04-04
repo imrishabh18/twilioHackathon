@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    color: green;
+    font-family: 'Poppins';
+    overflow-y: hidden;
+}
+h1{
+    font-size: 50px;
+    padding: 20px;
+}
+h2{
+    font-size: 20px;
+    padding: 20px;
+}
+#myform{
+    overflow: hidden;
+}
+label {
+    float: left;
+    width: 100%;
+    padding-right: 24px;
+    display: inline-block;
+}
+
+input {
+    float: left;
+    display: block;
+    width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=submit]{
+    background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}

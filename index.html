@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Fridge</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Happy Fridge</h1>
+    <h2>#reducehungerfromworld</h2>
+
+    <form id="myForm">
+      <label for="food-item">Food Item</label>
+      <input type="text" id="food-item" required/>
+      <label for="quantity">Sufficient for how many people</label>
+      <input type="number" id="quantity" />
+      <input type="submit" value="submit" required/>
+    </form>
+
+  </body>
+  <script>
+    const form = document.getElementById("myForm");
+    const foodItem = document.getElementById("food-item").value;
+    const quantity = document.getElementById("quantity").value;
+    function handleForm(e) {
+      e.preventDefault();
+    $.ajax({
+            type : 'post',
+            url : '/',
+            data : {
+              "foodItem" : foodItem,
+              "quantity" : quantity
+            },
+            success : function (response) {
+                console.log(response);
+            }
+        });
+    }
+    form.addEventListener("submit", handleForm);
+
+    
+  </script>
+</html>
