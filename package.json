@@ -9,6 +9,7 @@
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.2",
+    "path": "^0.12.7",
     "twilio": "^3.42.0"
   },
   "devDependencies": {},
