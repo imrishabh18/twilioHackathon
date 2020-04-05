@@ -37,12 +37,12 @@ app.post("/", async (req, res) => {
   console.log(quantity);
 });
 
-// if(process.env.NODE_ENV !== 'production'){
+if(process.env.NODE_ENV === 'production'){
 
-//   require("dotenv").config();
-// //   const client = require("twilio")(accountSid, authTOken);
-//   app.use(express.static('./'));
+  // require("dotenv").config();
+//   const client = require("twilio")(accountSid, authTOken);
+  app.use(express.static('./'));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "/index.html"));
-// })}
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/index.html"));
+})}
