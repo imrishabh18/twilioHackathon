@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static("./"));
-  // require("dotenv").config();
+  require("dotenv").config();
 
 const client = require("twilio")(accountSid, authTOken);
 
@@ -37,9 +37,9 @@ app.post("/", async (req, res) => {
   console.log(quantity);
 });
 
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV !== 'production'){
 
-  // require("dotenv").config();
+  require("dotenv").config();
 //   const client = require("twilio")(accountSid, authTOken);
   app.use(express.static('./'));
 
