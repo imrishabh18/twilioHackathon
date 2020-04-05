@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-require("dotenv").config();
+// require("dotenv").config();
 
 // const client = require("twilio")(accountSid, authTOken);
 
@@ -21,13 +21,13 @@ app.post("/", async (req, res) => {
   // const numbers = ["+919088720168","+918088540168","+919578720168","+918088720168","+919088440168","+919088720168","+919038720168","+919048720167"];
   // numbers.forEach(sendMsg);
   // function sendMsg(){
-  client.messages
-    .create({
-      to: "+919088720168",
-      from: process.env.MY_TWILIO_NUMBER,
-      body: `Food item entered in refrigator is ${foodItem} which is sufficient for ${quantity} people`,
-    })
-    .then((message) => console.log(message));
+  // client.messages
+    // .create({
+    //   to: "+919088720168",
+    //   from: process.env.MY_TWILIO_NUMBER,
+    //   body: `Food item entered in refrigator is ${foodItem} which is sufficient for ${quantity} people`,
+    // })
+    // .then((message) => console.log(message));
   // }
   console.log(quantity);
 });
