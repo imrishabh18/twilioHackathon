@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const client = require("twilio")(accountSid, authTOken);
 
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
@@ -37,12 +37,12 @@ app.post("/", async (req, res) => {
   console.log(quantity);
 });
 
-// if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
 
-//   // require("dotenv").config();
-// //   const client = require("twilio")(accountSid, authTOken);
-//   app.use(express.static('./'));
+  // require("dotenv").config();
+//   const client = require("twilio")(accountSid, authTOken);
+  app.use(express.static('./'));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "/index.html"));
-// })}
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/index.html"));
+})}
