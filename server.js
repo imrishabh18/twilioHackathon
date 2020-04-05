@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// require("dotenv").config();
+require("dotenv").config();
 
 const client = require("twilio")(accountSid, authTOken);
 
