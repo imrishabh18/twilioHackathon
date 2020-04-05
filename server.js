@@ -9,9 +9,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("./"));
-  require("dotenv").config();
+  // require("dotenv").config();
 
-const client = require("twilio")(accountSid, authTOken);
+// const client = require("twilio")(accountSid, authTOken);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
