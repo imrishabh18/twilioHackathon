@@ -15,12 +15,9 @@ const client = require("twilio")(accountSid, authTOken);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
-app.post("/", (req, res) => {
+app.post("/", async (req, res) => {
   const quantity = req.body.quantity;
   const foodItem = req.body.foodItem;
-  // const numbers = ["+919088720168","+918088540168","+919578720168","+918088720168","+919088440168","+919088720168","+919038720168","+919048720167"];
-  // numbers.forEach(sendMsg);
-  // function sendMsg(){
   client.messages
     .create({
       to: "+919088720168",
@@ -28,7 +25,6 @@ app.post("/", (req, res) => {
       body: `Food item entered in refrigator is ${foodItem} which is sufficient for ${quantity} people`,
     })
     .then((message) => console.log(message));
-  // }
   console.log(quantity);
 });
 const PORT = process.env.PORT || 5000;
