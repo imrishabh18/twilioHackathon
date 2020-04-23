@@ -26,6 +26,7 @@ app.post("/", async (req, res) => {
     })
     .then((message) => console.log(message));
   console.log(quantity);
+  console.log(quantity);
 });
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
